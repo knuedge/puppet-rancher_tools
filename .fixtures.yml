@@ -1,0 +1,10 @@
+fixtures:
+  forge: "https://forge.puppet.com"
+  forge_modules:
+    repo: 'puppet/archive'
+  repositories:
+    stdlib:
+      repo: 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
+      ref: '4.1.0'
+  symlinks:
+    rancher_tools: "#{source_dir}"

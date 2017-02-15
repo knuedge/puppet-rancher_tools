@@ -1,0 +1,52 @@
+{
+  "name": "rancher_tools",
+  "version": "0.0.1",
+  "author": "Daniel Schaaff",
+  "summary": "Install rancher cli and rancher compose",
+  "license": "MIT",
+  "source": "https://github.com/knuedge/puppet-rancher_tools.git",
+  "project_page": "https://github.com/knuedge/puppet-rancher_tools",
+  "issues_url": "https://github.com/knuedge/puppet-rancher_tools/issues",
+  "tags": ["rancher", "rancher_cli", "rancher_compose","docker"],
+  "dependencies": [
+    {
+     "name":"puppetlabs-stdlib",
+     "version_requirement":">= 1.0.0"
+    },
+     {
+     "name":"puppet/archive",
+     "version_requirement":">= 1.2.0"
+     }
+  ],
+  "operatingsystem_support": [
+    {
+       "operatingsystem": "Ubuntu",
+       "operatingsystemrelease": ["14.04", "16.04"]
+    },
+    {
+       "operatingsystem": "RedHat",
+       "operatingsystemrelease": ["6","7"]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": ["7","8"]
+    },
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": ["2012 R2"]
+    },
+    {
+      "operatingsystem": "Darwin"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">=3.0.0 <4.7.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">=3.0.0 <4.7.0"
+    }
+  ]
+}
