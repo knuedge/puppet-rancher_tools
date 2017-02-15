@@ -19,6 +19,11 @@ class rancher_tools (
       source       => "https://github.com/rancher/cli/releases/download/v${cli_version}/rancher-${platform}-amd64-v${cli_version}.${archive_type}",
       creates      => "${extract_path}/rancher-v0.4.1"
     }
+
+    file { '/usr/local/bin/rancher':
+      ensure => 'link',
+      target => "/opt/rancher-v${cli_version}/rancher",
+    }
   }
 
   # download and extract the compose archive
@@ -31,6 +36,11 @@ class rancher_tools (
       extract_path => $extract_path,
       source       => "https://github.com/rancher/rancher-compose/releases/download/v${compose_version}/rancher-compose-${platform}-amd64-v${compose_version}.${archive_type}",
       creates      => "${extract_path}/rancher-compose-v${compose_version}"
+    }
+
+    file { '/usr/local/bin/rancher-compose':
+      ensure => 'link',
+      target => "/opt/rancher-compose-v${cli_version}/rancher-compose",
     }
   }
 }

@@ -17,6 +17,9 @@ describe 'rancher_tools' do
             )
          end
          it do
+           is_expected.to contain_file('/usr/local/bin/rancher')
+         end
+         it do
            is_expected.to contain_archive('/tmp/rancher-compose-linux-amd64-v0.12.2.tar.gz').with(
             'ensure' => 'present',
             'extract' => 'true',
@@ -25,6 +28,9 @@ describe 'rancher_tools' do
             'creates' => '/opt/rancher-compose-v0.12.2'
             )
          end
+          it do
+           is_expected.to contain_file('/usr/local/bin/rancher-compose')
+         end
          context 'it should respect the install variables' do
            let(:params){{
             :install_cli => 'false',
@@ -32,6 +38,15 @@ describe 'rancher_tools' do
             }}
             it do
               should_not contain_archive('/tmp/rancher-linux-amd64-v0.4.1.tar.gz')
+            end
+            it do
+              should_not contain_archive('/tmp/rancher-compose-linux-amd64-v0.12.2.tar.gz')
+            end
+            it do
+              should_not contain_file('/usr/local/bin/rancher')
+            end
+             it do
+              should_not contain_file('/usr/local/bin/rancher-compose')
             end
          end
         end
