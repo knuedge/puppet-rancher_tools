@@ -11,18 +11,18 @@ describe 'rancher_tools' do
            is_expected.to contain_archive('/tmp/rancher-linux-amd64-v0.4.1.tar.gz').with(
               'ensure' => 'present',
               'extract' => 'true',
-              'extract_path' => '/usr/local/bin',
+              'extract_path' => '/opt',
               'source' => 'https://github.com/rancher/cli/releases/download/v0.4.1/rancher-linux-amd64-v0.4.1.tar.gz',
-              'creates' => '/usr/local/bin/rancher'
+              'creates' => '/opt/rancher-v0.4.1'
             )
          end
          it do
            is_expected.to contain_archive('/tmp/rancher-compose-linux-amd64-v0.12.2.tar.gz').with(
             'ensure' => 'present',
             'extract' => 'true',
-            'extract_path' => '/usr/local/bin',
+            'extract_path' => '/opt',
             'source' => 'https://github.com/rancher/rancher-compose/releases/download/v0.12.2/rancher-compose-linux-amd64-v0.12.2.tar.gz',
-            'creates' => '/usr/local/bin/rancher-compose'
+            'creates' => '/opt/rancher-compose-v0.12.2'
             )
          end
          context 'it should respect the install variables' do

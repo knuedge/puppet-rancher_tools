@@ -4,7 +4,7 @@ class rancher_tools (
   $compose_version = '0.12.2',
   $platform        = downcase($facts["kernel"]),
   $install_compose = true,
-  $extract_path    = '/usr/local/bin',
+  $extract_path    = '/opt',
   $archive_type    = 'tar.gz',
   )
 {
@@ -17,7 +17,7 @@ class rancher_tools (
       extract      => true,
       extract_path => $extract_path,
       source       => "https://github.com/rancher/cli/releases/download/v${cli_version}/rancher-${platform}-amd64-v${cli_version}.${archive_type}",
-      creates      => "${extract_path}/rancher"
+      creates      => "${extract_path}/rancher-v0.4.1"
     }
   }
 
@@ -30,7 +30,7 @@ class rancher_tools (
       extract      => true,
       extract_path => $extract_path,
       source       => "https://github.com/rancher/rancher-compose/releases/download/v${compose_version}/rancher-compose-${platform}-amd64-v${compose_version}.${archive_type}",
-      creates      => "${extract_path}/rancher-compose"
+      creates      => "${extract_path}/rancher-compose-v${compose_version}"
     }
   }
 }
