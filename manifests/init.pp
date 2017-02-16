@@ -40,7 +40,7 @@ class rancher_tools (
 
     file { '/usr/local/bin/rancher-compose':
       ensure => 'link',
-      target => "/opt/rancher-compose-v${cli_version}/rancher-compose",
+      target => "/opt/rancher-compose-v${compose_version}/rancher-compose",
     }
   }
 }
