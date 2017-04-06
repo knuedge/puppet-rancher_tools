@@ -8,6 +8,9 @@ class rancher_tools (
   $archive_type    = 'tar.gz',
   )
 {
+  file {'/usr/local/bin':
+    ensure => 'directory',
+  }
   # download and extract the cli archive
   # https://github.com/rancher/cli/releases/download/v0.4.1/rancher-linux-amd64-v0.4.1.tar.gz
   if $install_cli == true
