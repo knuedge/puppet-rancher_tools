@@ -1,6 +1,6 @@
 {
   "name": "rancher_tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Daniel Schaaff",
   "summary": "Install rancher cli and rancher compose",
   "license": "MIT",

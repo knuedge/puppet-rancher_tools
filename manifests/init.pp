@@ -20,7 +20,7 @@ class rancher_tools (
       extract      => true,
       extract_path => $extract_path,
       source       => "https://github.com/rancher/cli/releases/download/v${cli_version}/rancher-${platform}-amd64-v${cli_version}.${archive_type}",
-      creates      => "${extract_path}/rancher-v0.4.1"
+      creates      => "${extract_path}/rancher-v${cli_version}"
     }
 
     file { '/usr/local/bin/rancher':
